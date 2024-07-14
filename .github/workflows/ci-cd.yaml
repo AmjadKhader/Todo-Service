@@ -1,0 +1,37 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'
+
+      - name: Clean project
+        run: mvn clean
+
+      - name: Build project
+        run: mvn package --no-transfer-progress
+
+      - name: Run Tests
+        run: mvn test
+
+      - name: Generate Test Coverage Report
+        run: mvn jacoco:report
+
+      - name: Upload Test Coverage Report
+        uses: actions/upload-artifact@v2
+        with:
+          name: jacoco-report
+          path: target/site/jacoco/index.html
