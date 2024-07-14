@@ -2,8 +2,8 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
+  pull_request:
 
 jobs:
   build:
@@ -32,7 +32,7 @@ jobs:
         run: mvn jacoco:report
 
       - name: Upload Test Coverage Report
-        uses: actions/upload-artifact@v2
+        uses: codecov/action@v3
         with:
           name: jacoco-report
           path: target/site/jacoco/index.html
