@@ -1,5 +1,5 @@
 # Use a base image with JDK
-FROM openjdk:11-jdk-slim
+FROM openjdk:17-jdk-slim
 
 # Set the working directory
 WORKDIR /app
@@ -8,11 +8,8 @@ WORKDIR /app
 COPY pom.xml .
 COPY src ./src
 
-# Build the application
-RUN ./mvnw clean package
-
 # Copy the built JAR file to the Docker image
-COPY target/todo-service-1.0.0.jar todo-service.jar
+COPY target/service-1.0.0.jar todo-service.jar
 
 # Expose the port the application runs on
 EXPOSE 8092
