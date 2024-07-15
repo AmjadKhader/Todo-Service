@@ -20,7 +20,7 @@ services:
       context: .
       dockerfile: Dockerfile
     restart: on-failure
-    image: drone-management-system
+    image: todo-service
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 12345
