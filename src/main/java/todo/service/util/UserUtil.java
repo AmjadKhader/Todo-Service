@@ -11,11 +11,7 @@ import java.util.UUID;
 @Component
 public class UserUtil {
 
-    private final RestTemplate restTemplate;
-
-    public UserUtil(RestTemplate restTemplate) {
-        this.restTemplate = restTemplate;
-    }
+    private final RestTemplate restTemplate = new RestTemplate();
 
     public User getUserDetails(UUID userId) {
         Map<String, Object> response = restTemplate.getForObject("https://randomuser.me/api/", Map.class);
