@@ -33,7 +33,7 @@ The application follows a layered architecture:
 5. Build docker image: ```docker build -t todo-service .```
 6. Run docker compose: ```docker compose up -d ```
 7. The application will start on http://localhost:8092. You can now use any API testing tool (e.g., Postman) to interact with the endpoints.
-8. LeanIX.postman_collection.json contains example for all endpoints.
+8. Example.postman_collection.json contains example for all endpoints.
 
 ## API Endpoints
 
