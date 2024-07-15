@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "99223b4d-500f-4d62-8515-9fa8e4c0ac46",
+		"name": "LeanIX",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "24489936"
+	},
+	"item": [
+		{
+			"name": "Get All Boards",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8092/todo-service/api/boards/"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Board by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8092/todo-service/api/boards/5845f7a2-90ab-42fa-afb9-a7da0ff5e794"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Board",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"board1\",\n    \"description\": \"This is the first board\"\n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8092/todo-service/api/boards/"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Board",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8092/todo-service/api/boards/5845f7a2-90ab-42fa-afb9-a7da0ff5e794"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Task",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"task3\",\n    \"description\": \"This is the third task\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8092/todo-service/api/boards/5845f7a2-90ab-42fa-afb9-a7da0ff5e794/tasks"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Task",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8092/todo-service/api/tasks/8e25970d-4d59-4204-8700-c5b67acb1a8d"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Task",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"task2\",\n    \"description\": \"This is the second task - updated\",\n    \"user\":\"8e25970d-4d59-4204-8700-c5b67acb1a8d\",\n    \"status\": \"CREATED\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8092/todo-service/api/tasks/7ba74be6-a46e-4793-bae5-d0484f9a2c4c"
+			},
+			"response": []
+		},
+		{
+			"name": "Patch Task",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"status\": \"COMPLETED\",\n    \"user\": \"cfd26e33-0b95-4f2e-9087-06274da64d5b\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8092/todo-service/api/tasks/7ba74be6-a46e-4793-bae5-d0484f9a2c4c"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user\": \"cfd26e33-0b95-4f2e-9087-06274da64d5b\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8092/todo-service/api/webhooks/user-deleted"
+			},
+			"response": []
+		}
+	]
+}
