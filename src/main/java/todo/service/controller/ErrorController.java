@@ -19,4 +19,11 @@ public class ErrorController {
         logger.error("Invalid ...", e);
         return e.getMessage();
     }
+
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    @ExceptionHandler(Exception.class)
+    public String handleGeneralException(Exception e) {
+        logger.error("Internal Server Error ...", e);
+        return e.getMessage();
+    }
 }
