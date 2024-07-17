@@ -49,7 +49,7 @@ class TaskControllerTest {
                 "Updated Task",
                 "Updated Description",
                 UUID.randomUUID(),
-                TaskStatus.COMPLETED
+                TaskStatus.COMPLETED.toString()
         );
 
         TaskResponseDto responseDto = new TaskResponseDto(taskId,
@@ -80,7 +80,7 @@ class TaskControllerTest {
                 null,
                 "Updated Description",
                 UUID.randomUUID(),
-                TaskStatus.COMPLETED
+                TaskStatus.COMPLETED.toString()
         );
 
         mockMvc.perform(put("/todo-service/api/tasks/{id}", taskId)
@@ -151,7 +151,7 @@ class TaskControllerTest {
                 "Updated Task",
                 "Updated Description",
                 UUID.randomUUID(),
-                TaskStatus.COMPLETED
+                TaskStatus.COMPLETED.toString()
         );
 
         when(taskService.updateTask(taskId, requestDto))

@@ -45,7 +45,7 @@ class TaskServiceTest {
         taskDto.setName("Updated Task");
         taskDto.setDescription("Updated Description");
         taskDto.setUser(UUID.randomUUID());
-        taskDto.setStatus(TaskStatus.STARTED);
+        taskDto.setStatus(String.valueOf(TaskStatus.STARTED));
 
         Task task = new Task();
         when(taskRepository.findById(taskId)).thenReturn(Optional.of(task));
