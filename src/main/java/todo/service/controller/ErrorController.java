@@ -19,4 +19,11 @@ public class ErrorController {
         logger.error("Invalid ...", e);
         return e.getMessage();
     }
+
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ExceptionHandler(IllegalArgumentException.class)
+    public String handleIllegalArgumentException(IllegalArgumentException e) {
+        logger.error("Invalid Request ...", e);
+        return e.getMessage();
+    }
 }

@@ -8,6 +8,7 @@ import todo.service.dto.request.UpdateTaskRequestDto;
 import todo.service.dto.response.TaskResponseDto;
 import todo.service.exception.ResourceNotFoundException;
 import todo.service.model.Task;
+import todo.service.model.TaskStatus;
 import todo.service.model.User;
 import todo.service.repo.TaskRepository;
 
@@ -32,7 +33,7 @@ public class TaskService {
 
         task.setName(taskDto.getName());
         task.setDescription(taskDto.getDescription());
-        task.setStatus(taskDto.getStatus().toString());
+        task.setStatus(TaskStatus.fromString(taskDto.getStatus()).toString());
         task.setUser(user);
         return taskRepository.save(task).toDto();
     }

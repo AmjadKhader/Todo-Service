@@ -19,6 +19,6 @@ public class UpdateTaskRequestDto {
     private String description;
     @NotNull
     private UUID user;
-    @NotNull
-    private TaskStatus status;
+    @NotBlank
+    private String status;
 }
