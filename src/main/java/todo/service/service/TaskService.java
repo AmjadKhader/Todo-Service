@@ -54,8 +54,8 @@ public class TaskService {
         if (Objects.nonNull(taskRequestDto.getUser())) {
             task.setUser(userService.createUserOrGetIfPresent(taskRequestDto.getUser()));
         }
-        if (Objects.nonNull(taskRequestDto.getStatus())) {
-            task.setStatus(taskRequestDto.getStatus().toString());
+        if (Objects.nonNull(TaskStatus.fromString(taskRequestDto.getStatus()).toString())) {
+            task.setStatus(taskRequestDto.getStatus());
         }
         return taskRepository.save(task).toDto();
     }
