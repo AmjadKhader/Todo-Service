@@ -1,6 +1,7 @@
 # Todo Service Application
 
-This repository contains the source code for a Todo Service Application built with Spring Boot. The application allows users to create and manage boards and tasks. It also includes webhook functionality to handle user deletions.
+This repository contains the source code for a Todo Service Application built with Spring Boot. The application allows
+users to create and manage boards and tasks. It also includes webhook functionality to handle user deletions.
 
 ## Table of Contents
 
@@ -19,6 +20,7 @@ This repository contains the source code for a Todo Service Application built wi
 ## Architecture
 
 The application follows a layered architecture:
+
 - **Controller Layer**: Handles HTTP requests and responses.
 - **Service Layer**: Contains business logic.
 - **Repository Layer**: Handles database interactions.
@@ -28,16 +30,19 @@ The application follows a layered architecture:
 
 1. Clone this repository.
 2. Ensure you have Java 17, Maven installed, Docker is installed and running.
-3. Configure the application properties in src/main/resources/application.properties if needed (e.g., database settings).
+3. Configure the application properties in src/main/resources/application.properties if needed (e.g., database
+   settings).
 4. Build the project using Maven: ```mvn clean install```
 5. Build docker image: ```docker build -t todo-service .```
 6. Run docker compose: ```docker compose up -d ```
-7. The application will start on http://localhost:8092. You can now use any API testing tool (e.g., Postman) to interact with the endpoints.
+7. The application will start on http://localhost:8092. You can now use any API testing tool (e.g., Postman) to interact
+   with the endpoints.
 8. Example.postman_collection.json contains example for all endpoints.
 
 ## API Endpoints
 
 ### Get All Boards
+
 ```
 GET /todo-service/api/boards/
 Response: 
@@ -53,6 +58,7 @@ Response:
 ```
 
 ### Create Board
+
 ```
 POST /todo-service/api/boards/
 Request: 
@@ -71,6 +77,7 @@ Response:
 ```
 
 ### Get Board By ID
+
 ```
 GET /todo-service/api/boards/{id}
 Response: 
@@ -84,12 +91,14 @@ Response:
 ```
 
 ### Delete Board
+
 ``` 
 DELETE /todo-service/api/boards/{id}
 Status: 204 No Content
 ```
 
-### Create Task 
+### Create Task
+
 ``` 
 POST /todo-service/api/boards/{id}/tasks
 Request: 
@@ -112,6 +121,7 @@ Response:
 ``` 
 
 ### Update Task
+
 ``` 
 PUT /todo-service/api/tasks/{id}
 Request: 
@@ -136,6 +146,7 @@ Response:
 ``` 
 
 ### Patch Task
+
 ``` 
 PATCH /todo-service/api/tasks/{id}
 Request: 
@@ -157,12 +168,14 @@ Response:
 ```
 
 ### Delete Task
+
 ``` 
 DELETE /todo-service/api/tasks/{id}
 Response: Status: 204 No Content
 ``` 
 
 ### Handle User Deleted
+
 ``` 
 POST /todo-service/api/webhooks/user-deleted
 Request: 
