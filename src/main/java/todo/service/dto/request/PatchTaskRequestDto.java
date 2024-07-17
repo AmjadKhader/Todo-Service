@@ -13,10 +13,11 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PatchTaskRequestDto {
+    @NotBlank(message = "Name cannot be blank")
     private String name;
     private String description;
-    @NotBlank
+    @NotBlank(message = "User cannot be blank")
     private UUID user;
-    @NotNull
+    @NotBlank(message = "status cannot be blank")
     private TaskStatus status;
 }

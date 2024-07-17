@@ -13,7 +13,6 @@ import java.util.UUID;
 @NoArgsConstructor
 public class BoardResponseDto {
     private UUID id;
-    @NotBlank
     private String name;
     private String description;
     private List<TaskResponseDto> tasks;
